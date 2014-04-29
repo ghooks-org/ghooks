@@ -34,7 +34,7 @@ Add a `config.hooks` entry in your `package.json` and simply specify which git h
 ```
 
 ## Credits
-This module is heavily inspired by @nlf 's [precommit-hook](https://www.npmjs.org/package/precommit-hook).
+This module is heavily inspired by [__@nlf__](https://github.com/nlf)'s [precommit-hook](https://www.npmjs.org/package/precommit-hook)
 
 ## License
 This is licensed under the feel-free-to-do-whatever-you-want-to-do license – [http://unlicense.org](http://unlicense.org)
