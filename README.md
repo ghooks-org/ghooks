@@ -19,7 +19,7 @@ Add a `config.hooks` entry in your `package.json` and simply specify which git h
     ...
 
   "config": {
-    "hooks": {
+    "ghooks": {
       "post-update": "make post.update"
       "pre-applypatch": "make pre.applypatch"
       "pre-commit": "node_modules/.bin/gulp lint"
@@ -32,6 +32,9 @@ Add a `config.hooks` entry in your `package.json` and simply specify which git h
   ...
 }
 ```
+
+## Credits
+This module is heavily inspired by @nlf 's [precommit-hook](https://www.npmjs.org/package/precommit-hook).
 
 ## License
 This is licensed under the feel-free-to-do-whatever-you-want-to-do license – [http://unlicense.org](http://unlicense.org)
