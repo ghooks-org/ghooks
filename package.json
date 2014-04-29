@@ -1,7 +1,7 @@
 {
   "name"                 : "ghooks",
   "description"          : "Simple git hooks",
-  "version"              : "0.1.1",
+  "version"              : "0.2.0",
   "main"                 : "./lib/runner.js",
   "keywords"             : [ "git", "hooks", "hook" ],
   "author"               : "Guilherme Tramontina <guilherme.tramontina@gmail.com>",
@@ -44,7 +44,7 @@
     "blanket"            : {
       "pattern"          : "ghooks/lib"
     },
-    "hooks"              : {
+    "ghooks"              : {
       "pre-commit"       : "make test"
     }
   }

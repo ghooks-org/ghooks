@@ -8,13 +8,13 @@ describe('runner', function () {
   });
 
   beforeEach(setupPackageJsonWith({ config: {
-    hooks: {
+    ghooks: {
       'pre-commit': 'make pre-commit',
       'pre-push': 'make pre-push'
     }
   }}));
 
-  it('executes the command specified on the hooks config', function () {
+  it('executes the command specified on the ghooks config', function () {
     this.run(process.cwd(), '/pre-commit');
     expect(this.spawn).to
       .have.been.calledWith('make pre-commit', { stdio: 'inherit' });
