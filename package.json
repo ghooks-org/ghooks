@@ -1,0 +1,46 @@
+{
+  "name"                 : "ghooks",
+  "description"          : "Easy setup git hooks",
+  "version"              : "0.1.0",
+  "main"                 : "./lib/runner.js",
+  "keywords"             : [ "git", "hooks", "hook" ],
+  "author"               : "Guilherme Tramontina <guilherme.tramontina@gmail.com>",
+  "homepage"             : "https://github.com/gtramontina/ghooks",
+  "license"              : "unlicense",
+
+  "repository"           : {
+    "type"               : "git",
+    "url"                : "https://github.com/gtramontina/ghooks.git"
+  },
+
+  "bugs"                 : {
+    "url"                : "https://github.com/gtramontina/ghooks/issues"
+  },
+
+  "scripts"              : {
+    "test"               : "make test"
+  },
+
+  "dependencies"         : {
+    "spawn-command"      : "^0.0.2"
+  },
+
+  "devDependencies"      : {
+    "mocha"              : "^1.18.2",
+    "chai"               : "^1.9.1",
+    "sinon"              : "^1.9.1",
+    "sinon-chai"         : "^2.5.0",
+    "proxyquire"         : "^0.6.0",
+    "mock-fs"            : "^2.2.0",
+    "mocha-cov-reporter" : "^0.2.3",
+    "blanket"            : "^1.1.6",
+    "jshint-stylish"     : "^0.1.5",
+    "jshint"             : "^2.5.0"
+  },
+
+  "config"               : {
+    "blanket"            : {
+      "pattern"          : "ghooks/lib"
+    }
+  }
+}

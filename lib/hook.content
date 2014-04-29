@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+// ┌─┐┬ ┬┌─┐┌─┐┬┌─┌─┐
+// │ ┬├─┤│ ││ │├┴┐└─┐
+// └─┘┴ ┴└─┘└─┘┴ ┴└─┘
+require('ghooks')(__dirname, __filename);
