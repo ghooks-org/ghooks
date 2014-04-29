@@ -18,7 +18,12 @@
   },
 
   "scripts"              : {
-    "test"               : "make test"
+    "test"               : "make test",
+    "install"            : "./bin/install"
+  },
+
+  "bin"                  : {
+    "ghooks.install"     : "./bin/install"
   },
 
   "dependencies"         : {
@@ -35,12 +40,16 @@
     "mocha-cov-reporter" : "^0.2.3",
     "blanket"            : "^1.1.6",
     "jshint-stylish"     : "^0.1.5",
-    "jshint"             : "^2.5.0"
+    "jshint"             : "^2.5.0",
+    "ghooks"             : "*"
   },
 
   "config"               : {
     "blanket"            : {
       "pattern"          : "ghooks/lib"
+    },
+    "hooks"              : {
+      "pre-commit"       : "make test"
     }
   }
 }
