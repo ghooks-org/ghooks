@@ -13,6 +13,12 @@ describe('install', function () {
     install();
   });
 
+  it('creates hooks directory', function() {
+    fsStub({ '.git': {} });
+    install();
+    expect(fs.existsSync('.git/hooks')).to.be.true;
+  });
+
   it('creates hook files', function () {
     fsStub({ '.git/hooks': {} });
     install();
