@@ -9,6 +9,7 @@ Simple git hooks
 ```
 npm install ghooks --save-dev
 ```
+
 _It is not advised to install `ghooks` as a production dependency, as it will install git hooks in your production environment as well. Please install it under the `devDependencies` section of your `package.json`._
 
 ## Setup
@@ -16,20 +17,18 @@ Add a `config.hooks` entry in your `package.json` and simply specify which git h
 
 ```
 {
-    ...
-
+  …
   "config": {
     "ghooks": {
-      "post-update": "make post.update"
-      "pre-applypatch": "make pre.applypatch"
-      "pre-commit": "node_modules/.bin/gulp lint"
-      "pre-push": "make test"
-      "pre-rebase": "make pre.rebase"
+      "post-update": "make post.update",
+      "pre-applypatch": "make pre.applypatch",
+      "pre-commit": "node_modules/.bin/gulp lint",
+      "pre-push": "make test",
+      "pre-rebase": "make pre.rebase",
       "update": "make install"
     }
   }
-
-  ...
+  …
 }
 ```
 
