@@ -2,8 +2,7 @@ require('./setup')();
 
 describe('install', function () {
   var install = require('../lib/install');
-  var hookContent = fileContent(require('path')
-    .resolve(__dirname, '../lib/hook.template'));
+  var hookContent = require('../lib/hook.template').content;
 
   it('warns when the target is not a git project', function () {
     fsStub({});
