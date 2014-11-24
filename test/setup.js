@@ -2,11 +2,12 @@ var chai = require('chai');
 chai.use(require('sinon-chai'));
 
 global.expect  = chai.expect;
-global.stub  = require('sinon').stub;
-global.spy  = require('sinon').spy;
+global.sinon = require('sinon');
+global.stub  = sinon.stub;
+global.spy  = sinon.spy;
 global.fsStub = require('mock-fs');
 global.fs = require('fs');
-global.proxyquire = require('proxyquire');
+global.proxyquire = require('proxyquire').noCallThru();
 
 global.fileContent = function (file) {
   return fs.readFileSync(file, 'UTF-8');
