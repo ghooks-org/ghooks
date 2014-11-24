@@ -1,3 +1,14 @@
 #!/usr/bin/env node
 // {{generated_message}}
-require('ghooks')(__dirname, __filename);
+
+(function () {
+  try { require('ghooks'); }
+  catch (e) { return warnAboutGHooks(); }
+  require('ghooks')(__dirname, __filename);
+})();
+
+function warnAboutGHooks () { console.warn(
+  'ghooks not found!\n' +
+  'Make sure you have it installed on your "node_modules".\n' +
+  'Skipping git hooks.'
+);}
