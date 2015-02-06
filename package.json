@@ -19,7 +19,7 @@
 
   "scripts"              : {
     "test"               : "make test",
-    "install"            : "./bin/install"
+    "install"            : "node ./bin/install"
   },
 
   "dependencies"         : {
