@@ -27,16 +27,16 @@
   },
 
   "devDependencies"      : {
-    "mocha"              : "^2.0.1",
-    "chai"               : "^1.10.0",
-    "sinon"              : "^1.12.1",
-    "sinon-chai"         : "^2.6.0",
-    "proxyquire"         : "^1.1.0",
-    "mock-fs"            : "^2.3.2",
-    "mocha-cov-reporter" : "^1.1.1",
+    "mocha"              : "^2.1.0",
+    "chai"               : "^2.0.0",
+    "sinon"              : "^1.12.2",
+    "sinon-chai"         : "^2.7.0",
+    "proxyquire"         : "^1.3.1",
+    "mock-fs"            : "^2.5.0",
+    "mocha-cov-reporter" : "^1.1.3",
     "blanket"            : "^1.1.6",
     "jshint-stylish"     : "^1.0.0",
-    "jshint"             : "^2.5.10",
+    "jshint"             : "^2.6.0",
     "ghooks"             : "*"
   },
 
