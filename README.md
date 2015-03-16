@@ -25,7 +25,8 @@ Add a `config.hooks` entry in your `package.json` and simply specify which git h
       "pre-commit": "node_modules/.bin/gulp lint",
       "pre-push": "make test",
       "pre-rebase": "make pre.rebase",
-      "update": "make install"
+      "update": "make install",
+      "post-merge": "npm install"
     }
   }
   …
