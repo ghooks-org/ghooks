@@ -46,6 +46,10 @@ describe('install', function () {
     expect(hooks).to.include('update');
     expect(fileContent('.git/hooks/update')).to.equal(hookContent);
     expect(fileMode('.git/hooks/update')).to.equal('755');
+
+    expect(hooks).to.include('post-merge');
+    expect(fileContent('.git/hooks/post-merge')).to.equal(hookContent);
+    expect(fileMode('.git/hooks/post-merge')).to.equal('755');
   });
 
   describe('backing up existing hooks', function () {
