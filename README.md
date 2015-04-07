@@ -26,7 +26,8 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
       "pre-push": "make test",
       "pre-rebase": "make pre.rebase",
       "update": "make install",
-      "post-merge": "npm install"
+      "post-merge": "npm install",
+      "post-rewrite": "npm install"
     }
   }
   …
