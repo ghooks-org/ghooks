@@ -1,5 +1,7 @@
 # ghooks [![Build Status](https://travis-ci.org/gtramontina/ghooks.svg?branch=master)](https://travis-ci.org/gtramontina/ghooks) [![Dependencies status](https://david-dm.org/gtramontina/ghooks/status.svg?theme=shields.io)](https://david-dm.org/gtramontina/ghooks#info=dependencies) [![Dev Dependencies status](https://david-dm.org/gtramontina/ghooks/dev-status.svg?theme=shields.io)](https://david-dm.org/gtramontina/ghooks#info=devDependencies)
 
+[![Join the chat at https://gitter.im/gtramontina/ghooks](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gtramontina/ghooks?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Simple git hooks
 
 [![NPM](https://nodei.co/npm/ghooks.png?compact=true)](https://nodei.co/npm/ghooks/)
