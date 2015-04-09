@@ -2,7 +2,6 @@ require('./setup')();
 
 describe('install', function () {
   var install = require('../lib/install');
-  var hookContent = require('../lib/hook.template').content;
 
   it('warns when the target is not a git project', sinon.test(function () {
     fsStub({});
@@ -22,38 +21,31 @@ describe('install', function () {
     install();
 
     var hooks = fs.readdirSync('.git/hooks');
+    var hookContent = require('../lib/hook.template').content;
+    var expectHook= function(hook, filename, permission){
+      expect(hooks).to.include(hook);
+      expect(fileContent(filename)).to.equal(hookContent);
+      expect(fileMode(filename)).to.equal(permission);
+    };
 
-    expect(hooks).to.include('post-update');
-    expect(fileContent('.git/hooks/post-update')).to.equal(hookContent);
-    expect(fileMode('.git/hooks/post-update')).to.equal('755');
-
-    expect(hooks).to.include('pre-applypatch');
-    expect(fileContent('.git/hooks/pre-applypatch')).to.equal(hookContent);
-    expect(fileMode('.git/hooks/pre-applypatch')).to.equal('755');
-
-    expect(hooks).to.include('pre-commit');
-    expect(fileContent('.git/hooks/pre-commit')).to.equal(hookContent);
-    expect(fileMode('.git/hooks/pre-commit')).to.equal('755');
-
-    expect(hooks).to.include('pre-push');
-    expect(fileContent('.git/hooks/pre-push')).to.equal(hookContent);
-    expect(fileMode('.git/hooks/pre-push')).to.equal('755');
-
-    expect(hooks).to.include('pre-rebase');
-    expect(fileContent('.git/hooks/pre-rebase')).to.equal(hookContent);
-    expect(fileMode('.git/hooks/pre-rebase')).to.equal('755');
-
-    expect(hooks).to.include('update');
-    expect(fileContent('.git/hooks/update')).to.equal(hookContent);
-    expect(fileMode('.git/hooks/update')).to.equal('755');
-
-    expect(hooks).to.include('post-merge');
-    expect(fileContent('.git/hooks/post-merge')).to.equal(hookContent);
-    expect(fileMode('.git/hooks/post-merge')).to.equal('755');
-
-    expect(hooks).to.include('post-rewrite');
-    expect(fileContent('.git/hooks/post-rewrite')).to.equal(hookContent);
-    expect(fileMode('.git/hooks/post-rewrite')).to.equal('755');
+    //         hook                ,filename                       ,permission
+    expectHook('applypatch-msg'    ,'.git/hooks/applypatch-msg'    ,'755');
+    expectHook('pre-applypatch'    ,'.git/hooks/pre-applypatch'    ,'755');
+    expectHook('post-applypatch'   ,'.git/hooks/post-applypatch'   ,'755');
+    expectHook('pre-commit'        ,'.git/hooks/pre-commit'        ,'755');
+    expectHook('prepare-commit-msg','.git/hooks/prepare-commit-msg','755');
+    expectHook('commit-msg'        ,'.git/hooks/commit-msg'        ,'755');
+    expectHook('post-commit'       ,'.git/hooks/post-commit'       ,'755');
+    expectHook('pre-rebase'        ,'.git/hooks/pre-rebase'        ,'755');
+    expectHook('post-checkout'     ,'.git/hooks/post-checkout'     ,'755');
+    expectHook('post-merge'        ,'.git/hooks/post-merge'        ,'755');
+    expectHook('pre-push'          ,'.git/hooks/pre-push'          ,'755');
+    expectHook('pre-receive'       ,'.git/hooks/pre-receive'       ,'755');
+    expectHook('update'            ,'.git/hooks/update'            ,'755');
+    expectHook('post-receive'      ,'.git/hooks/post-receive'      ,'755');
+    expectHook('post-update'       ,'.git/hooks/post-update'       ,'755');
+    expectHook('pre-auto-gc'       ,'.git/hooks/pre-auto-gc'       ,'755');
+    expectHook('post-rewrite'      ,'.git/hooks/post-rewrite'      ,'755');
   });
 
   describe('backing up existing hooks', function () {
