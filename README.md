@@ -22,22 +22,45 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
   …
   "config": {
     "ghooks": {
-      "post-update": "make post.update",
-      "pre-applypatch": "make pre.applypatch",
       "pre-commit": "node_modules/.bin/gulp lint",
       "pre-push": "make test",
-      "pre-rebase": "make pre.rebase",
-      "update": "make install",
       "post-merge": "npm install",
-      "post-rewrite": "npm install"
+      "post-rewrite": "npm install",
+      …
     }
   }
   …
 }
 ```
 
+## All [documented](http://git-scm.com/docs/githooks) hooks are available:
+
+* applypatch-msg
+* pre-applypatch
+* post-applypatch
+* pre-commit
+* prepare-commit-msg
+* commit-msg
+* post-commit
+* pre-rebase
+* post-checkout
+* post-merge
+* pre-push
+* pre-receive
+* update
+* post-receive
+* post-update
+* pre-auto-gc
+* post-rewrite
+
+_**CAVEAT**: At the moment, parameterized hooks (e.g. `prepare-commit-msg`) don't receive any parameters, so their usage might be limited._
+
 ## Credits
 This module is heavily inspired by [__@nlf__](https://github.com/nlf)'s [precommit-hook](https://www.npmjs.org/package/precommit-hook)
+
+## Contributors
+
+Huge thanks to everyone listed [here](https://github.com/gtramontina/ghooks/graphs/contributors)!
 
 ## License
 This is licensed under the feel-free-to-do-whatever-you-want-to-do license – [http://unlicense.org](http://unlicense.org)
