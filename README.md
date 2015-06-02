@@ -55,6 +55,10 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
 
 _**CAVEAT**: At the moment, parameterized hooks (e.g. `prepare-commit-msg`) don't receive any parameters, so their usage might be limited._
 
+## Common Issues
+
+* [Usage with git GUI clients](https://github.com/gtramontina/ghooks/issues/18) – Thanks to [@JamieMason](https://github.com/JamieMason)
+
 ## Credits
 This module is heavily inspired by [__@nlf__](https://github.com/nlf)'s [precommit-hook](https://www.npmjs.org/package/precommit-hook)
 
