@@ -17,10 +17,6 @@ global.fileMode = function (file) {
   return (fs.statSync(file).mode & 07777).toString(8);
 };
 
-global.setupPackageJsonWith = function (content) { return function () {
-  fsStub({ 'package.json': JSON.stringify(content) });
-};};
-
 module.exports = function () {
   afterEach(fsStub.restore);
 };

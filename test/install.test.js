@@ -1,7 +1,9 @@
 require('./setup')();
 
 describe('install', function () {
-  var install = require('../lib/install');
+  var install = proxyquire('../lib/install', { './gitroot': function gitroot () {
+    return './';
+  }});
 
   it('warns when the target is not a git project', sinon.test(function () {
     fsStub({});
