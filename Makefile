@@ -49,7 +49,7 @@ coverage.show:; @$(call print, "Running coverage.show…")
 .PHONY: lint
 lint:; @$(call print, "Running lint…")
 	@$(BIN)/jshint \
-		--reporter node_modules/jshint-stylish/stylish.js \
+		--reporter node_modules/jshint-stylish/index.js \
 		./
 
 # ------------------------------------------------------------------------------
