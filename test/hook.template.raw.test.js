@@ -6,13 +6,13 @@ describe('hook.template.raw', function () {
 
     beforeEach(function () {
       this.ghooks = stub();
-      this.a = proxyquire('../lib/hook.template.raw', { 'ghooks': this.ghooks });
+      this.a = proxyquire('../lib/hook.template.raw', { '{{generated_path}}': this.ghooks });
     });
 
     it('delegates the hook execution to ghooks', function () {
       var dirname = process.cwd() + '/lib';
       var filename = dirname + '/hook.template.raw';
-      expect(this.ghooks).to.have.been.calledWith(dirname, filename);
+      expect(this.ghooks).to.have.been.calledWith(filename);
     });
 
   });
@@ -22,7 +22,6 @@ describe('hook.template.raw', function () {
     beforeEach(function () {
       var templatePath = require.resolve('../lib/hook.template.raw');
       delete require.cache[templatePath];
-      delete require.cache[require.resolve('ghooks')];
 
       var allButTheTemplate = {};
       allButTheTemplate[templatePath] = fileContent(templatePath);
