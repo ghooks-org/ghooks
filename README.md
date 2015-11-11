@@ -4,8 +4,6 @@
 
 Simple git hooks
 
-[![NPM](https://nodei.co/npm/ghooks.png?compact=true)](https://nodei.co/npm/ghooks/)
-
 ## Installation
 
 ```
@@ -22,7 +20,8 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
   …
   "config": {
     "ghooks": {
-      "pre-commit": "node_modules/.bin/gulp lint",
+      "pre-commit": "gulp lint",
+      "commit-msg": "validate-commit-msg $1",
       "pre-push": "make test",
       "post-merge": "npm install",
       "post-rewrite": "npm install",
@@ -53,8 +52,6 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
 * pre-auto-gc
 * post-rewrite
 
-_**CAVEAT**: At the moment, parameterized hooks (e.g. `prepare-commit-msg`) don't receive any parameters, so their usage might be limited._
-
 ## Common Issues
 
 * [Usage with git GUI clients](https://github.com/gtramontina/ghooks/issues/18) – Thanks to [@JamieMason](https://github.com/JamieMason)
@@ -67,4 +64,5 @@ This module is heavily inspired by [__@nlf__](https://github.com/nlf)'s [precomm
 Huge thanks to everyone listed [here](https://github.com/gtramontina/ghooks/graphs/contributors)!
 
 ## License
+
 This is licensed under the feel-free-to-do-whatever-you-want-to-do license – [http://unlicense.org](http://unlicense.org)
