@@ -1,3 +1,4 @@
+var path = require('path');
 require('./setup')();
 
 describe('runner', function () {
@@ -10,7 +11,8 @@ describe('runner', function () {
   beforeEach(setupPackageJsonWith({ config: {
     ghooks: {
       'pre-commit': 'make pre-commit',
-      'pre-push': 'make pre-push'
+      'pre-push': 'make pre-push',
+      'commit-msg': 'make commit-msg $1'
     }
   }}));
 
@@ -35,4 +37,12 @@ describe('runner', function () {
     expect(this.spawn).to.not.have.been.called;
   });
 
+  it('converts argument indicators to arguments from the githook', function () {
+    var oldProcessArgv = process.argv;
+    process.argv = [path.join(process.cwd(), '.git/hooks/commit-msg'), './.git/COMMIT_EDITMSG'];
+    this.run(process.cwd(), '/commit-msg');
+    expect(this.spawn)
+      .to.have.been.calledWith('make commit-msg ./.git/COMMIT_EDITMSG', { stdio: 'inherit' });
+    process.argv = oldProcessArgv;
+  });
 });
