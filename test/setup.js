@@ -1,5 +1,6 @@
 var chai = require('chai');
 chai.use(require('sinon-chai'));
+chai.use(require('chai-string'));
 
 global.expect  = chai.expect;
 global.sinon = require('sinon');

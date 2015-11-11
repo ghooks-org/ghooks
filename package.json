@@ -46,7 +46,7 @@
       "pattern": "ghooks/lib"
     },
     "ghooks": {
-      "pre-commit": "foo && make test"
+      "pre-commit": "make test"
     }
   }
 }
