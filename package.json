@@ -1,7 +1,7 @@
 {
   "name": "ghooks",
   "description": "Simple git hooks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./lib/runner.js",
   "keywords": [
     "git",
