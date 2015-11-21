@@ -65,4 +65,4 @@ Huge thanks to everyone listed [here](https://github.com/gtramontina/ghooks/grap
 
 ## License
 
-This is licensed under the feel-free-to-do-whatever-you-want-to-do license – [http://unlicense.org](http://unlicense.org)
+This software is licensed under the MIT license
