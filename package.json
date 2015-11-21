@@ -10,7 +10,7 @@
   ],
   "author": "Guilherme Tramontina <guilherme.tramontina@gmail.com>",
   "homepage": "https://github.com/gtramontina/ghooks",
-  "license": "unlicense",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/gtramontina/ghooks.git"
