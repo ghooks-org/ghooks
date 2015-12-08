@@ -21,7 +21,7 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
   "config": {
     "ghooks": {
       "pre-commit": "gulp lint",
-      "commit-msg": "validate-commit-msg $1",
+      "commit-msg": "validate-commit-msg",
       "pre-push": "make test",
       "post-merge": "npm install",
       "post-rewrite": "npm install",
