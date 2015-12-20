@@ -19,7 +19,10 @@
     "url": "https://github.com/gtramontina/ghooks/issues"
   },
   "scripts": {
-    "test": "make test",
+    "lint": "jshint --reporter node_modules/jshint-stylish/index.js ./",
+    "test:unit": "mocha",
+    "test": "npm run lint && npm run test:unit && npm run coverage",
+    "coverage": "mocha -r blanket -R mocha-cov-reporter",
     "install": "node ./bin/install"
   },
   "dependencies": {
@@ -46,7 +49,7 @@
       "pattern": "ghooks/lib"
     },
     "ghooks": {
-      "pre-commit": "make test"
+      "pre-commit": "npm test"
     }
   }
 }
