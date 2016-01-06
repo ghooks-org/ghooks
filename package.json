@@ -26,6 +26,7 @@
     "install": "node ./bin/install"
   },
   "dependencies": {
+    "findup": "^0.1.5",
     "lodash.clone": "3.0.3",
     "manage-path": "2.0.0",
     "spawn-command": "^0.0.2"

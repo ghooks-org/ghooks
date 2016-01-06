@@ -4,8 +4,8 @@
   "camelcase"     : true,
   "maxparams"     : 3,
   "maxdepth"      : 3,
-  "maxstatements" : 5,
-  "maxcomplexity" : 2,
+  "maxstatements" : 6,
+  "maxcomplexity" : 3,
   "maxlen"        : 80,
 
   "asi"           : false,
