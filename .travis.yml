@@ -20,7 +20,6 @@ before_script:
 script:
   - npm run test
   - npm run check-coverage
-  - npm run build
 after_success:
   - npm run report-coverage
   - npm run semantic-release
