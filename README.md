@@ -1,6 +1,16 @@
-# ghooks [![Build Status](https://travis-ci.org/gtramontina/ghooks.svg?branch=master)](https://travis-ci.org/gtramontina/ghooks) [![Dependencies status](https://david-dm.org/gtramontina/ghooks/status.svg?theme=shields.io)](https://david-dm.org/gtramontina/ghooks#info=dependencies) [![Dev Dependencies status](https://david-dm.org/gtramontina/ghooks/dev-status.svg?theme=shields.io)](https://david-dm.org/gtramontina/ghooks#info=devDependencies) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+# ghooks
 
-[![Join the chat at https://gitter.im/gtramontina/ghooks](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gtramontina/ghooks?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![version](https://img.shields.io/npm/v/ghooks.svg?style=flat-square)](http://npm.im/ghooks)
+[![travis build](https://img.shields.io/travis/gtramontina/ghooks.svg?style=flat-square)](https://travis-ci.org/gtramontina/ghooks)
+[![codecov coverage](https://img.shields.io/codecov/c/github/gtramontina/ghooks.svg?style=flat-square)](https://codecov.io/github/gtramontina/ghooks)
+[![Dependencies status](https://img.shields.io/david/gtramontina/ghooks.svg?style=flat-square)](https://david-dm.org/gtramontina/ghooks#info=dependencies)
+[![Dev Dependencies status](https://img.shields.io/david/dev/gtramontina/ghooks.svg?style=flat-square)](https://david-dm.org/gtramontina/ghooks#info=devDependencies)
+
+[![MIT License](https://img.shields.io/npm/l/ghooks.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![downloads](https://img.shields.io/npm/dm/ghooks.svg?style=flat-square)](http://npm-stat.com/charts.html?package=ghooks&from=2014-04-01)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![gitter chat](https://img.shields.io/gitter/room/gtramontina/ghooks.svg?style=flat-square)](https://gitter.im/gtramontina/ghooks)
 
 Simple git hooks
 
