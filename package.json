@@ -19,7 +19,7 @@
     "url": "https://github.com/gtramontina/ghooks/issues"
   },
   "scripts": {
-    "lint": "jshint --reporter node_modules/jshint-stylish/index.js bin/ lib/ test/",
+    "lint": "eslint bin/ lib/ test/",
     "test:unit": "mocha",
     "test": "npm run lint && npm run coverage",
     "coverage": "istanbul cover -i lib/**/*.js _mocha -- test/**/*.test.js",
@@ -42,10 +42,11 @@
     "codecov.io": "0.1.6",
     "commitizen": "2.4.6",
     "cz-conventional-changelog": "1.1.5",
+    "eslint": "^1.10.3",
+    "eslint-config-kentcdodds": "^5.0.0",
+    "eslint-plugin-mocha": "^1.1.0",
     "ghooks": "*",
     "istanbul": "0.4.1",
-    "jshint": "^2.6.0",
-    "jshint-stylish": "^2.0.0",
     "mocha": "^2.1.0",
     "mock-fs": "^3.0.0",
     "opt-cli": "1.1.1",
