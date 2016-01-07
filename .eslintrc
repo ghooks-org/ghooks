@@ -1,0 +1,7 @@
+{
+  "extends": "kentcdodds",
+  "rules": {
+    "complexity": [2, 2],
+    "max-statements": [2, 5]
+  }
+}
