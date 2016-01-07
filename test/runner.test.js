@@ -1,6 +1,5 @@
 var path = require('path');
 var getPathVar = require('manage-path/dist/get-path-var');
-var findup = require('findup');
 require('./setup')();
 
 describe('runner', function () {
@@ -8,11 +7,6 @@ describe('runner', function () {
     var on = this.spawnOn = stub();
     this.spawn = spy(function () { return { on: on }; });
     this.run = proxyquire('../lib/runner', { 'spawn-command': this.spawn });
-    spy(findup, 'sync');
-  });
-
-  afterEach(function () {
-    findup.sync.restore();
   });
 
   beforeEach(setupPackageJsonWith({ config: {
@@ -23,12 +17,6 @@ describe('runner', function () {
       'post-merge': 'echo $PATH'
     }
   }}));
-
-  it('looks for `package.json` using findup, starting with process.cwd()', function () {
-    this.run('/foo/bar/', '/pre-commit');
-    expect(findup.sync)
-      .to.have.been.calledWith(process.cwd(), 'package.json');
-  });
 
   it('executes the command specified on the ghooks config', function () {
     this.run(process.cwd(), '/pre-commit');
