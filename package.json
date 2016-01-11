@@ -19,8 +19,8 @@
     "url": "https://github.com/gtramontina/ghooks/issues"
   },
   "scripts": {
-    "lint": "eslint bin/ lib/ test/",
-    "test:unit": "mocha",
+    "lint": "eslint bin/* lib/* test/",
+    "test:unit": "mocha --compilers js:babel-register",
     "test": "npm run lint && npm run coverage",
     "coverage": "istanbul cover -i lib/**/*.js _mocha -- test/**/*.test.js",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
