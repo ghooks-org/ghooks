@@ -18,9 +18,6 @@
   "bugs": {
     "url": "https://github.com/gtramontina/ghooks/issues"
   },
-  "engines" : {
-    "node" : ">=4.0"
-  },
   "scripts": {
     "lint": "eslint bin/ lib/ test/",
     "test:unit": "mocha",
