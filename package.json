@@ -22,7 +22,7 @@
     "lint": "eslint bin/* lib/* test/",
     "test:unit": "mocha --compilers js:babel-register",
     "test": "npm run lint && npm run coverage",
-    "coverage": "istanbul cover -i lib/**/*.js _mocha -- test/**/*.test.js",
+    "coverage": "istanbul cover -i lib/**/*.js _mocha -- --compilers js:babel-register test/**/*.test.js",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "validate": "npm t && npm run check-coverage",
@@ -37,6 +37,8 @@
     "spawn-command": "0.0.2"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.4.3",
     "chai": "^3.0.0",
     "chai-string": "1.1.6",
     "codecov.io": "0.1.6",
@@ -46,7 +48,7 @@
     "eslint-config-kentcdodds": "^5.0.0",
     "eslint-plugin-mocha": "^1.1.0",
     "ghooks": "*",
-    "istanbul": "0.4.1",
+    "istanbul": "^1.0.0-alpha",
     "mocha": "^2.1.0",
     "mock-fs": "^3.0.0",
     "opt-cli": "1.1.1",
@@ -56,6 +58,11 @@
     "sinon-chai": "^2.7.0",
     "travis-after-all": "^1.4.4",
     "validate-commit-msg": "1.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   },
   "config": {
     "ghooks": {

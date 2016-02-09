@@ -1,7 +1,7 @@
 require('./setup')()
 const fs = require('fs')
 
-describe('install', () => {
+describe('install', function describeInstall() {
   const install = require('../lib/install')
 
   it('warns when the target is not a git project', sinon.test(function test() {
