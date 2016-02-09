@@ -1,6 +1,6 @@
 require('./setup')()
 
-describe('hook.template.raw', () => {
+describe('hook.template.raw', function describeHookTemplateRaw() {
 
   describe('when ghooks is installed', () => {
 

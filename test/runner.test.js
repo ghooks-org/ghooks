@@ -2,7 +2,7 @@ const path = require('path')
 const getPathVar = require('manage-path/dist/get-path-var')
 require('./setup')()
 
-describe('runner', () => {
+describe('runner', function describeRunner() {
   beforeEach(() => {
     const on = this.spawnOn = sinon.stub()
     this.spawn = sinon.spy(() => {
