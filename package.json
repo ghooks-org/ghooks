@@ -25,6 +25,7 @@
     "coverage": "istanbul cover -i lib/**/*.js _mocha -- test/**/*.test.js",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "validate": "npm t && npm run check-coverage",
     "commit": "git-cz",
     "install": "node ./bin/install",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -47,6 +48,7 @@
     "jshint-stylish": "^2.0.0",
     "mocha": "^2.1.0",
     "mock-fs": "^3.0.0",
+    "opt-cli": "1.1.1",
     "proxyquire": "^1.3.1",
     "semantic-release": "^4.3.5",
     "sinon": "^1.12.2",
@@ -56,8 +58,8 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm test && npm run check-coverage",
-      "commit-msg": "validate-commit-msg"
+      "pre-commit": "opt --in pre-commit --exec \"npm run validate\"",
+      "commit-msg": "opt --in commit-msg --exec validate-commit-msg"
     },
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"

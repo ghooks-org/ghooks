@@ -23,6 +23,7 @@ npm install ghooks --save-dev
 _It is not advised to install `ghooks` as a production dependency, as it will install git hooks in your production environment as well. Please install it under the `devDependencies` section of your `package.json`._
 
 ## Setup
+
 Add a `config.ghooks` entry in your `package.json` and simply specify which git hooks you want and their corresponding commands, like the following:
 
 ```
@@ -41,6 +42,10 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
   …
 }
 ```
+
+## opt-in/out
+
+One of the last things you want is to raise the barrier to contributing to your open source project. So [Andreas Windt](https://github.com/ta2edchimp) developed the [opt-cli](https://npmjs.com/package/opt-cli) package to allow you to turn your hooks into opt-in/out scripts. See this project's [`package.json`](package.json) for an example of how to do that.
 
 ## All [documented](http://git-scm.com/docs/githooks) hooks are available:
 

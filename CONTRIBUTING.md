@@ -2,6 +2,17 @@
 
 Thanks for your interest in contributing! Here's a few things to keep in mind when contributing to this project:
 
+This project uses `ghooks` to run `commit-msg` and `pre-commit` hooks.
+
+These hooks are `opt-in` only, so if you want to run them (recommended) then add an `.opt-in` file to the root of the project:
+
+```
+pre-commit
+commit-msg
+```
+
+We do this to make it easier for new comers to contribute and allow experienced contributors avoid pushing stuff that'll break the build.
+
 ## semantic-release
 
 We use [semantic-release](http://npm.im/semantic-release) to manage releases. This means we have a convention for our commit messages.
