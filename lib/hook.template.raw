@@ -1,14 +1,19 @@
 #!/usr/bin/env node
 // {{generated_message}}
 
-(function () {
-  try { require('ghooks'); }
-  catch (e) { return warnAboutGHooks(); }
-  require('ghooks')(__dirname, __filename);
-})();
+(function hookEntryPoint() {
+  try {
+    require('ghooks')
+  } catch (e) {
+    return warnAboutGHooks()
+  }
+  require('ghooks')(__dirname, __filename)
+})()
 
-function warnAboutGHooks () { console.warn(
-  'ghooks not found!\n' +
-  'Make sure you have it installed on your "node_modules".\n' +
-  'Skipping git hooks.'
-);}
+function warnAboutGHooks() {
+  console.warn( // eslint-disable-line no-console
+    'ghooks not found!\n' +
+    'Make sure you have it installed on your "node_modules".\n' +
+    'Skipping git hooks.'
+  )
+}
