@@ -1,0 +1,10 @@
+{
+  "extends": "kentcdodds/test",
+  "rules": {
+    "no-invalid-this": 0
+  },
+  "globals": {
+    "proxyquire": false,
+    "fsStub": false
+  }
+}
