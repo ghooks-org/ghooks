@@ -2,7 +2,7 @@
   "name": "ghooks",
   "description": "Simple git hooks",
   "version": "0.0.0-semantically-released",
-  "main": "./lib/runner.js",
+  "main": "./dist/runner.js",
   "keywords": [
     "git",
     "hooks",
@@ -19,6 +19,8 @@
     "url": "https://github.com/gtramontina/ghooks/issues"
   },
   "scripts": {
+    "prebuild": "rm -rf dist && mkdir dist",
+    "build": "babel lib --out-dir dist && babel lib/hook.template.raw --out-file dist/hook.template.raw",
     "lint": "eslint bin/* lib/* test/",
     "test:unit": "mocha --compilers js:babel-register",
     "test": "npm run lint && npm run coverage",
@@ -37,6 +39,7 @@
     "spawn-command": "0.0.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.6.5",
     "babel-preset-es2015": "^6.3.13",
     "babel-register": "^6.4.3",
     "chai": "^3.0.0",
