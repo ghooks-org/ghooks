@@ -3,7 +3,7 @@
 
 (function () {
   try { require('ghooks'); }
-  catch (e) { return warnAboutGHooks(); }
+  catch (e) { warnAboutGHooks(); process.exit(1); }
   require('ghooks')(__dirname, __filename);
 })();
 
