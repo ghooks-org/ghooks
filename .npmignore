@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+coverage
+.idea
+.opt-in
+.opt-out
+lib
+test
+.editorconfig
+.eslintrc
+.travis.yml
+CONTRIBUTING.md
+LICENSE
