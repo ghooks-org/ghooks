@@ -1,15 +1,53 @@
 #!/usr/bin/env node
 // {{generated_message}}
 
-(function hookEntryPoint() {
+const fs = require('fs')
+const path = require('path')
+
+;(function hookEntryPoint() {
+  const ghooks = getGhooksEntryPoint()
+  checkForGHooks(ghooks)
+  require(ghooks)(__dirname, __filename)
+})()
+
+function getGhooksEntryPoint() {
+  const worktree = getWorkTree()
+  if (worktree) {
+    return path.resolve(__dirname, '../', worktree, 'node_modules', 'ghooks')
+  }
+  return 'ghooks'
+}
+
+function checkForGHooks(ghooks) {
   try {
-    require('ghooks')
+    require(ghooks)
   } catch (e) {
     warnAboutGHooks()
     process.exit(1)
   }
-  require('ghooks')(__dirname, __filename)
-})()
+}
+
+function getWorkTree() {
+  try {
+    return getWorkTreeFromConfig(getConfigFileContent())
+  } catch (e) {
+    return ''
+  }
+}
+
+function getConfigFileContent() {
+  const configFile = path.resolve(__dirname, '../config')
+  const fileStat = fs.statSync(configFile)
+  if (fileStat && fileStat.isFile()) {
+    return fs.readFileSync(configFile, 'utf8')
+  }
+  return ''
+}
+
+function getWorkTreeFromConfig(configFileContent) {
+  const worktreeRegEx = /\[core\][^]{0,}worktree = ([^\n]{1,})[^]{0,}/
+  return worktreeRegEx.test(configFileContent) ? configFileContent.replace(worktreeRegEx, '$1') : ''
+}
 
 function warnAboutGHooks() {
   console.warn( // eslint-disable-line no-console
