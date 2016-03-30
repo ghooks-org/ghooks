@@ -29,14 +29,16 @@
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "validate": "npm t && npm run check-coverage",
     "commit": "git-cz",
-    "install": "opt --out ghooks-install --exec \"[ ! -d \"./dist\" ] && npm run build; node ./bin/install\"",
+    "install": "opt --out ghooks-install --exec \"node ./bin/install\"",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "dependencies": {
+    "execa": "^0.2.2",
     "findup": "0.1.5",
     "lodash.clone": "4.3.2",
     "manage-path": "2.0.0",
     "opt-cli": "1.4.0",
+    "path-exists": "^2.1.0",
     "spawn-command": "0.0.2"
   },
   "devDependencies": {
