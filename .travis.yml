@@ -14,7 +14,10 @@ node_js:
   - '4'
   - '5'
 before_install:
-  - npm i -g npm@^3.0.0
+  # detect if the current build's node version is < 4
+  # if yes, install latest npm version 2.x
+  # if not, install latest npm version 3.x
+  - if [[ `node -v | sed 's/[^0-9\.]//g'` < 4 ]]; then npm i -g npm@^2.0.0; else npm i -g npm@^3.0.0; fi
 before_script:
   - npm prune
 script:
