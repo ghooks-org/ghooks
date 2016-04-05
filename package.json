@@ -24,7 +24,7 @@
     "lint": "eslint bin/* lib/* test/",
     "test:unit": "mocha --compilers js:babel-register",
     "test": "npm run lint && npm run coverage",
-    "coverage": "istanbul cover -i lib/**/*.js _mocha -- --compilers js:babel-register test/**/*.test.js",
+    "coverage": "istanbul cover -i lib/**/* _mocha -- --compilers js:babel-register test/**/*.test.js",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov",
     "validate": "npm t && npm run check-coverage",

@@ -79,6 +79,47 @@ describe('install', function describeInstall() {
 
 })
 
+describe('install using worktree / as a submodule', function describeInstall() {
+  const install = require('../lib/install')
+
+  it('warns when no gitdir specified for worktree / submodule', sinon.test(function test() {
+    fsStub({'.git': ''})
+    const warn = this.stub(console, 'warn')
+    install()
+    expect(warn).to.have.been.calledWithMatch(/this does not seem to be a git project/i)
+  }))
+
+  it('creates hooks directory using gitdir', () => {
+    fsStub({
+      '.git': 'gitdir: ../../a/path/somewhere/else',
+      '../../a/path/somewhere/else': {},
+    })
+    install()
+    expect(fs.existsSync('../../a/path/somewhere/else/hooks')).to.be.true
+  })
+
+})
+
+describe('install (ensure 100% code coverage)', function describeInstall() {
+  const install = require('proxyquire')('../lib/install', {
+    fs: {
+      statSync() {
+        // to provoke the case where a '.git' entry on the filesystem
+        // is neither a directory nor a file
+        return {isDirectory: () => false, isFile: () => false}
+      },
+    },
+  })
+
+  it('warns when no gitdir specified for worktree / submodule', sinon.test(function test() {
+    const warn = this.stub(console, 'warn')
+    fsStub({'.git': ''})
+    install()
+    expect(warn).to.have.been.calledWithMatch(/this does not seem to be a git project/i)
+  }))
+
+})
+
 function fileMode(file) {
   const allOn = 4095 // == 07777 (octal)
   return (fs.statSync(file).mode & allOn) // eslint-disable-line no-bitwise
