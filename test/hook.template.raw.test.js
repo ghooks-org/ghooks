@@ -20,19 +20,8 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
   describe('when ghooks is not found', () => {
     it('warns about ghooks not being present', sinon.test(function test() {
       const warn = this.stub(console, 'warn')
-      const exitMessage = 'Exit process when ghooks not being present'
-      // instead of really exiting the process ...
-      const exit = this.stub(process, 'exit', () => {
-        // ... throw a predetermined exception, thus preventing
-        // further code execution within the tested module ...
-        throw Error(exitMessage)
-      })
-      // ... and expect it to be eventually thrown
-      expect(() => {
-        proxyquire('../lib/hook.template.raw', {ghooks: null})
-      }).to.throw(exitMessage)
+      proxyquire('../lib/hook.template.raw', {ghooks: null})
       expect(warn).to.have.been.calledWithMatch(/ghooks not found!/i)
-      expect(exit).to.have.been.calledWith(1)
     }))
 
   })
@@ -76,19 +65,8 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
         },
       }
       const warn = this.stub(console, 'warn')
-      const exitMessage = 'Exit process when ghooks not being present'
-      // instead of really exiting the process ...
-      const exit = this.stub(process, 'exit', () => {
-        // ... throw a predetermined exception, thus preventing
-        // further code execution within the tested module ...
-        throw Error(exitMessage)
-      })
-      // ... and expect it to be eventually thrown
-      expect(() => {
-        proxyquire('../lib/hook.template.raw', stub)
-      }).to.throw(exitMessage)
+      proxyquire('../lib/hook.template.raw', stub)
       expect(warn).to.have.been.calledWithMatch(/ghooks not found!/i)
-      expect(exit).to.have.been.calledWith(1)
     }))
 
     it('warns about ghooks not being found due to no gitdir being present', sinon.test(function test() {
@@ -102,19 +80,8 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
         },
       }
       const warn = this.stub(console, 'warn')
-      const exitMessage = 'Exit process when ghooks not being present'
-      // instead of really exiting the process ...
-      const exit = this.stub(process, 'exit', () => {
-        // ... throw a predetermined exception, thus preventing
-        // further code execution within the tested module ...
-        throw Error(exitMessage)
-      })
-      // ... and expect it to be eventually thrown
-      expect(() => {
-        proxyquire('../lib/hook.template.raw', stub)
-      }).to.throw(exitMessage)
+      proxyquire('../lib/hook.template.raw', stub)
       expect(warn).to.have.been.calledWithMatch(/ghooks not found!/i)
-      expect(exit).to.have.been.calledWith(1)
     }))
 
     it('warns about ghooks not being found due to no valid git config being present', sinon.test(function test() {
@@ -127,19 +94,8 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
         },
       }
       const warn = this.stub(console, 'warn')
-      const exitMessage = 'Exit process when ghooks not being present'
-      // instead of really exiting the process ...
-      const exit = this.stub(process, 'exit', () => {
-        // ... throw a predetermined exception, thus preventing
-        // further code execution within the tested module ...
-        throw Error(exitMessage)
-      })
-      // ... and expect it to be eventually thrown
-      expect(() => {
-        proxyquire('../lib/hook.template.raw', stub)
-      }).to.throw(exitMessage)
+      proxyquire('../lib/hook.template.raw', stub)
       expect(warn).to.have.been.calledWithMatch(/ghooks not found!/i)
-      expect(exit).to.have.been.calledWith(1)
     }))
 
   })

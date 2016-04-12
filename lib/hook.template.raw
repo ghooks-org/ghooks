@@ -5,8 +5,9 @@ const fs = require('fs')
 const path = require('path')
 const ghooks = getGhooksEntryPoint()
 
-checkForGHooks(ghooks)
-require(ghooks)(__dirname, __filename)
+if (checkForGHooks(ghooks)) {
+  require(ghooks)(__dirname, __filename)
+}
 
 function getGhooksEntryPoint() {
   const worktree = getWorkTree()
@@ -21,8 +22,9 @@ function checkForGHooks(ghooksPath) {
     require(ghooksPath)
   } catch (e) {
     warnAboutGHooks()
-    process.exit(1)
+    return false
   }
+  return true
 }
 
 function getWorkTree() {
