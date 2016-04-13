@@ -5,20 +5,22 @@ require('./setup')()
 describe('runner', function describeRunner() {
   beforeEach(() => {
     const on = this.spawnOn = sinon.stub()
-    this.spawn = sinon.spy(() => {
+
+    this.stub = setupStubWithPackageJson({
+      config: {
+        ghooks: {
+          'pre-commit': 'make pre-commit',
+          'pre-push': 'make pre-push',
+          'commit-msg': 'make commit-msg $1',
+          'post-merge': 'echo $PATH',
+        },
+      },
+    })
+    this.stub['spawn-command'] = this.spawn = sinon.spy(() => {
       return {on}
     })
-    this.run = proxyquire('../lib/runner', {'spawn-command': this.spawn})
+    this.run = proxyquire('../lib/runner', this.stub)
   })
-
-  beforeEach(setupPackageJsonWith({config: {
-    ghooks: {
-      'pre-commit': 'make pre-commit',
-      'pre-push': 'make pre-push',
-      'commit-msg': 'make commit-msg $1',
-      'post-merge': 'echo $PATH',
-    },
-  }}))
 
   it('executes the command specified on the ghooks config', () => {
     this.run(process.cwd(), '/pre-commit')
@@ -52,15 +54,17 @@ describe('runner', function describeRunner() {
 
   it('should alter the path', () => {
     this.run(process.cwd(), '/pre-push')
-    const prefixPath = path.resolve(process.cwd(), 'node_modules', '.bin')
+    const prefixPath = this.stub.path.resolve()
     const calledOptions = this.spawn.firstCall.args[1]
     expect(calledOptions.env[getPathVar()])
       .to.startWith(prefixPath)
   })
 })
 
-function setupPackageJsonWith(content) {
-  return () => {
-    fsStub({'package.json': JSON.stringify(content)})
+function setupStubWithPackageJson(content) {
+  return {
+    findup: {sync: () => null, '@global': true},
+    path: {resolve: () => '/some/resolved/path', '@global': true},
+    fs: {readFileSync: () => JSON.stringify(content), '@global': true},
   }
 }
