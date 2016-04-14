@@ -7,7 +7,7 @@ describe('config', function describeConfig() {
       hooks: {},
     }
 
-    const stub = setupStubWithPackageJson({config: {}})
+    const stub = setupStubWithPackageJson({})
 
     const {getConfig} = proxyquire('../lib/config', stub)
 
