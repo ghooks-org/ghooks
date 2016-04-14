@@ -9,10 +9,10 @@ branches:
 notifications:
   email: false
 node_js:
-  - '0.10'
-  - '0.12'
-  - '4'
   - '5'
+  - '4'
+  - '0.12'
+  - '0.10'
 before_install:
   # detect if the current build's node version is < 4
   # if yes, install latest npm version 2.x
@@ -25,5 +25,8 @@ script:
   - npm run check-coverage
   - npm run build
 after_success:
+  - 'curl -Lo travis_after_all.py https://git.io/travis_after_all'
+  - python travis_after_all.py
+  - 'export $(cat .to_export_back) &> /dev/null'
   - npm run report-coverage
-  - travis-after-all && npm run semantic-release
+  - npm run semantic-release
