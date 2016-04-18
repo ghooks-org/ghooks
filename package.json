@@ -62,7 +62,7 @@
     "sinon": "^1.12.2",
     "sinon-chai": "^2.7.0",
     "travis-after-all": "^1.4.4",
-    "validate-commit-msg": "2.6.0"
+    "validate-commit-msg": "2.6.1"
   },
   "babel": {
     "presets": [
