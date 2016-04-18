@@ -1,8 +1,15 @@
 require('./setup')()
 const fs = require('fs')
+const proxyquire = require('proxyquire')
 
 describe('install', function describeInstall() {
-  const install = require('../lib/install')
+  const install = proxyquire('../lib/install', {
+    './config': {
+      getConfig() {
+        return {testConfig: true}
+      },
+    },
+  })
 
   it('warns when the target is not a git project', sinon.test(function test() {
     fsStub({})
@@ -22,7 +29,7 @@ describe('install', function describeInstall() {
     install()
 
     const hooks = fs.readdirSync('.git/hooks')
-    const hookContent = require('../lib/hook.template').content
+    const hookContent = require('../lib/hook.template').getContent({testConfig: true})
     function expectHook(hook, filename, permission) {
       expect(hooks).to.include(hook)
       expect(fs.readFileSync(filename, 'UTF-8')).to.equal(hookContent)
@@ -101,7 +108,7 @@ describe('install using worktree / as a submodule', function describeInstall() {
 })
 
 describe('install (ensure 100% code coverage)', function describeInstall() {
-  const install = require('proxyquire')('../lib/install', {
+  const install = proxyquire('../lib/install', {
     fs: {
       statSync() {
         // to provoke the case where a '.git' entry on the filesystem
