@@ -24,18 +24,35 @@ _It is not advised to install `ghooks` as a production dependency, as it will in
 
 ## Setup
 
-Add a `config.ghooks` entry in your `package.json` and simply specify which git hooks you want and their corresponding commands, like the following:
+Add a `config.ghooks` entry in your `package.json` and simply specify (via a `hooks` field) which git hooks you want and their corresponding commands, like the following:
 
-```
+```JSON
 {
   …
   "config": {
     "ghooks": {
-      "pre-commit": "gulp lint",
-      "commit-msg": "validate-commit-msg",
-      "pre-push": "make test",
-      "post-merge": "npm install",
-      "post-rewrite": "npm install",
+      "hooks": {
+        "pre-commit": "gulp lint",
+        "commit-msg": "validate-commit-msg",
+        "pre-push": "make test",
+        "post-merge": "npm install",
+        "post-rewrite": "npm install",
+        …
+      }
+    }
+  }
+  …
+}
+```
+
+Additional options can be configured via corresponding fields within the `config.ghooks` in your `package.json`. At the moment, you can only specify how the git hooks should handle a missing ghooks dependency. By default, git hooks will simply be skipped, but you may also enable them to exit with an error:
+
+```JSON
+{
+  …
+  "config": {
+    "ghooks": {
+      "exitWithError": true
       …
     }
   }
