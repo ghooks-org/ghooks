@@ -49,7 +49,7 @@
     "chai-string": "1.2.0",
     "codecov": "^1.0.1",
     "commitizen": "2.8.1",
-    "cz-conventional-changelog": "1.1.5",
+    "cz-conventional-changelog": "1.1.6",
     "eslint": "^1.10.3",
     "eslint-config-kentcdodds": "^5.0.0",
     "eslint-plugin-mocha": "^1.1.0",
