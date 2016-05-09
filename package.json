@@ -52,7 +52,7 @@
     "cz-conventional-changelog": "1.1.6",
     "eslint": "^1.10.3",
     "eslint-config-kentcdodds": "^5.0.0",
-    "eslint-plugin-mocha": "^1.1.0",
+    "eslint-plugin-mocha": "^2.1.0",
     "ghooks": "*",
     "mocha": "^2.1.0",
     "mock-fs": "^3.0.0",
