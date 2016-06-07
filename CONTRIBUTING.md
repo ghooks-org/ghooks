@@ -16,7 +16,7 @@ We do this to make it easier for new comers to contribute and allow experienced 
 ## semantic-release
 
 We use [semantic-release](http://npm.im/semantic-release) to manage releases. This means we have a convention for our commit messages.
-**Please follow [our commit message convention](https://github.com/ajoslin/conventional-changelog/blob/master/conventions/angular.md)**
+**Please follow [our commit message convention](https://github.com/conventional-changelog/conventional-changelog-angular/blob/ed32559941719a130bb0327f886d6a32a8cbc2ba/convention.md)**
 even if you're making a small change. This repository follows the
 [How to Write an Open Source JavaScript Library](https://egghead.io/series/how-to-write-an-open-source-javascript-library)
 series on egghead.io (by yours truly). See
