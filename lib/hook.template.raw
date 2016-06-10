@@ -3,6 +3,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const nodeModulesPath = {{node_modules_path}}
 const ghooks = getGhooksEntryPoint()
 
 if (checkForGHooks(ghooks)) {
