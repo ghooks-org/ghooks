@@ -7,7 +7,7 @@ const nodeModulesPath = '{{node_modules_path}}'
 const ghooks = getGhooksEntryPoint()
 
 if (checkForGHooks(ghooks)) {
-  require(ghooks)(__dirname, __filename)
+  require(ghooks)(nodeModulesPath, __filename)
 }
 
 function getGhooksEntryPoint() {
@@ -15,7 +15,7 @@ function getGhooksEntryPoint() {
   if (worktree) {
     return path.resolve(__dirname, '../', worktree, 'node_modules', 'ghooks')
   }
-  return 'ghooks'
+  return path.resolve(nodeModulesPath, 'ghooks')
 }
 
 function checkForGHooks(ghooksPath) {
