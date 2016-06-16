@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+try {
+  const opt = require('opt-cli')
+  if (!opt.testOptOut('ghooks-install')) {
+    require('./install')
+  }
+} catch (e) {
+  console.warn( // eslint-disable-line no-console
+    '\nghooks postinstall could not be completed.\n' +
+    '==========================================\n\n' +
+    'Usually this is due to using npm@2.15.x. Please consider updating npm\n' +
+    'to its latest version or run the following command manually afterwards:\n\n' +
+    '\tnpm explore ghooks -- npm run install\n\n' +
+    'See https://github.com/gtramontina/ghooks/issues/71 for more information.\n'
+  )
+}
