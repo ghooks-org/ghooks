@@ -3,10 +3,19 @@
 
 const fs = require('fs')
 const path = require('path')
+const config = getRenderedConfig()
 const ghooks = getGhooksEntryPoint()
 
 if (checkForGHooks(ghooks)) {
   require(ghooks)(__dirname, __filename)
+}
+
+function getRenderedConfig() {
+  // ghooks' actual config gets rendered here
+  // it gets substituted on ghooks' setup
+  // {{generated_config_start}}
+  return global.__testonly_ghooksConfig__ || {}
+  // {{generated_config_end}}
 }
 
 function getGhooksEntryPoint() {
@@ -52,7 +61,11 @@ function getWorkTreeFromConfig(configFileContent) {
 function warnAboutGHooks() {
   console.warn( // eslint-disable-line no-console
     'ghooks not found!\n' +
-    'Make sure you have it installed on your "node_modules".\n' +
-    'Skipping git hooks.'
+    'Make sure you have it installed on your "node_modules".'
   )
+  if (config.exitWithError) {
+    console.warn('Aborting operation.') // eslint-disable-line no-console
+    process.exit(1)
+  }
+  console.warn('Skipping git hooks.') // eslint-disable-line no-console
 }
