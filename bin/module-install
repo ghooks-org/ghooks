@@ -10,6 +10,7 @@ try {
     '==========================================\n\n' +
     'Usually this is due to using npm@2.15.x. Please consider updating npm\n' +
     'to its latest version or run the following command manually afterwards:\n\n' +
-    '\tnode ./bin/install\n'
+    '\tnpm explore ghooks -- npm run install\n\n' +
+    'See https://github.com/gtramontina/ghooks/issues/71 for more information.\n'
   )
 }
