@@ -11,6 +11,15 @@ if (checkForGHooks(ghooks)) {
 }
 
 function getGhooksEntryPoint() {
+  try {
+    require('ghooks')
+    return 'ghooks'
+  } catch (e) {
+    return getGhooksAbsoluteEntryPoint()
+  }
+}
+
+function getGhooksAbsoluteEntryPoint() {
   const worktree = getWorkTree()
   if (worktree) {
     return path.resolve(__dirname, '../', worktree, 'node_modules', 'ghooks')
