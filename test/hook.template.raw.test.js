@@ -5,10 +5,8 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
   describe('when ghooks is installed', () => {
 
     beforeEach(() => {
-      const path = require('path')
-      const ghooksEntryPoint = path.resolve(__dirname, '..', '{{node_modules_path}}', 'ghooks')
       this.ghooks = sinon.stub()
-      proxyquire('../lib/hook.template.raw', {[ghooksEntryPoint]: this.ghooks})
+      proxyquire('../lib/hook.template.raw', {ghooks: this.ghooks})
     })
 
     it('delegates the hook execution to ghooks', () => {
@@ -28,6 +26,23 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
 
   })
 
+  describe('when ghooks is installed, but the node working dir is below the project dir', () => {
+
+    beforeEach(() => {
+      const path = require('path')
+      const ghooksEntryPoint = path.resolve(__dirname, '..', '{{node_modules_path}}', 'ghooks')
+      this.ghooks = sinon.stub()
+      proxyquire('../lib/hook.template.raw', {ghooks: null, [ghooksEntryPoint]: this.ghooks})
+    })
+
+    it('delegates the hook execution to ghooks', () => {
+      const dirname = process.cwd() + '/lib'
+      const filename = dirname + '/hook.template.raw'
+      expect(this.ghooks).to.have.been.calledWith('{{node_modules_path}}', filename)
+    })
+
+  })
+
   describe('when ghooks is installed, using worktree / in a submodule', () => {
 
     beforeEach(() => {
@@ -35,6 +50,7 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
       const worktree = '../../a/path/somewhere/else'
       const ghooksResolved = path.resolve(process.cwd(), worktree, 'node_modules', 'ghooks')
       const stub = {
+        ghooks: null,
         fs: {
           statSync: () => {
             return {isFile: () => true}
