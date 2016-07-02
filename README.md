@@ -22,6 +22,8 @@ npm install ghooks --save-dev
 
 _It is not advised to install `ghooks` as a production dependency, as it will install git hooks in your production environment as well. Please install it under the `devDependencies` section of your `package.json`._
 
+_Please also note, that it is absolutely **not advised** to install `ghooks` globally. To work as expected, make it a development dependency of your project(s)._
+
 ## Setup
 
 Add a `config.ghooks` entry in your `package.json` and simply specify which git hooks you want and their corresponding commands, like the following:
