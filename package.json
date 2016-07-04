@@ -54,7 +54,7 @@
     "eslint-config-kentcdodds": "^6.2.1",
     "eslint-plugin-import": "^1.8.0",
     "eslint-plugin-mocha": "^3.0.0",
-    "ghooks": "*",
+    "ghooks": "1.3.2",
     "mocha": "^2.1.0",
     "mock-fs": "^3.0.0",
     "nyc": "^6.4.0",
