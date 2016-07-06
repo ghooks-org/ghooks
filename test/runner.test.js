@@ -54,7 +54,7 @@ describe('runner', function describeRunner() {
     this.run(process.cwd(), '/pre-push')
     const prefixPath = path.resolve(process.cwd(), 'node_modules', '.bin')
     const calledOptions = this.spawn.firstCall.args[1]
-    expect(calledOptions.env[getPathVar()])
+    expect(calledOptions.env[getPathVar(process.env, process.platform)])
       .to.startWith(prefixPath)
   })
 })
