@@ -10,8 +10,7 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
     })
 
     it('delegates the hook execution to ghooks', () => {
-      const dirname = process.cwd() + '/lib'
-      const filename = dirname + '/hook.template.raw'
+      const filename = path.resolve(process.cwd(), 'lib', 'hook.template.raw')
       expect(this.ghooks).to.have.been.calledWith('{{node_modules_path}}', filename)
     })
 
@@ -29,15 +28,13 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
   describe('when ghooks is installed, but the node working dir is below the project dir', () => {
 
     beforeEach(() => {
-      const path = require('path')
       const ghooksEntryPoint = path.resolve(__dirname, '..', '{{node_modules_path}}', 'ghooks')
       this.ghooks = sinon.stub()
       proxyquire('../lib/hook.template.raw', {ghooks: null, [ghooksEntryPoint]: this.ghooks})
     })
 
     it('delegates the hook execution to ghooks', () => {
-      const dirname = process.cwd() + '/lib'
-      const filename = dirname + '/hook.template.raw'
+      const filename = path.resolve(process.cwd(), 'lib', 'hook.template.raw')
       expect(this.ghooks).to.have.been.calledWith('{{node_modules_path}}', filename)
     })
 
@@ -46,7 +43,6 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
   describe('when ghooks is installed, using worktree / in a submodule', () => {
 
     beforeEach(() => {
-      const path = require('path')
       const worktree = '../../a/path/somewhere/else'
       const ghooksResolved = path.resolve(process.cwd(), worktree, 'node_modules', 'ghooks')
       const stub = {
@@ -63,8 +59,7 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
     })
 
     it('delegates the hook execution to ghooks', () => {
-      const dirname = process.cwd() + '/lib'
-      const filename = dirname + '/hook.template.raw'
+      const filename = path.resolve(process.cwd(), 'lib', 'hook.template.raw')
       expect(this.ghooks).to.have.been.calledWith('{{node_modules_path}}', filename)
     })
 

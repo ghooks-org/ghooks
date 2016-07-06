@@ -2,6 +2,7 @@
 
 [![version](https://img.shields.io/npm/v/ghooks.svg?style=flat-square)](http://npm.im/ghooks)
 [![travis build](https://img.shields.io/travis/gtramontina/ghooks.svg?style=flat-square)](https://travis-ci.org/gtramontina/ghooks)
+[![AppVeyor](https://img.shields.io/appveyor/ci/gtramontina/ghooks.svg?style=flat-square)](https://ci.appveyor.com/project/gtramontina/ghooks)
 [![codecov coverage](https://img.shields.io/codecov/c/github/gtramontina/ghooks.svg?style=flat-square)](https://codecov.io/github/gtramontina/ghooks)
 [![Dependencies status](https://img.shields.io/david/gtramontina/ghooks.svg?style=flat-square)](https://david-dm.org/gtramontina/ghooks#info=dependencies)
 [![Dev Dependencies status](https://img.shields.io/david/dev/gtramontina/ghooks.svg?style=flat-square)](https://david-dm.org/gtramontina/ghooks#info=devDependencies)
