@@ -9,5 +9,6 @@ test
 .editorconfig
 .eslintrc
 .travis.yml
+appveyor.yml
 CONTRIBUTING.md
 LICENSE

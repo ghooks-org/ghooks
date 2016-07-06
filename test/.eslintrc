@@ -5,6 +5,7 @@
   },
   "globals": {
     "proxyquire": false,
-    "fsStub": false
+    "fsStub": false,
+    "path": false
   }
 }
