@@ -46,6 +46,12 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
 }
 ```
 
+**Note:** _The hooks' working directory is relative to the git root (where you have your `.git` directory). This means that if your package.json is in a subdirectory of your git repo, you'll need to cd into the directory before running any npm scripts. E.g.:_
+
+```json
+"pre-commit": "cd path/to/folder && npm run test"
+```
+
 ## opt-in/out
 
 One of the last things you want is to raise the barrier to contributing to your open source project. So [Andreas Windt](https://github.com/ta2edchimp) developed the [opt-cli](https://npmjs.com/package/opt-cli) package to allow you to turn your hooks into opt-in/out scripts. See this project's [`package.json`](package.json) for an example of how to do that.
