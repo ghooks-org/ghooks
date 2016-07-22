@@ -62,6 +62,7 @@
     "semantic-release": "^4.3.5",
     "sinon": "^1.12.2",
     "sinon-chai": "^2.7.0",
+    "spawn-cmd": "0.0.2",
     "travis-after-all": "^1.4.4",
     "validate-commit-msg": "2.6.1"
   },
