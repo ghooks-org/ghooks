@@ -50,7 +50,7 @@
     "codecov": "^1.0.1",
     "commitizen": "2.8.1",
     "cz-conventional-changelog": "1.1.6",
-    "eslint": "^2.10.2",
+    "eslint": "^3.0.1",
     "eslint-config-kentcdodds": "^6.2.1",
     "eslint-plugin-import": "^1.8.0",
     "eslint-plugin-mocha": "^4.3.0",
