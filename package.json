@@ -33,7 +33,7 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "dependencies": {
-    "execa": "^0.4.0",
+    "execa": "^0.5.0",
     "findup": "0.1.5",
     "lodash.clone": "4.3.2",
     "manage-path": "2.0.0",
