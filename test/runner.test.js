@@ -30,6 +30,24 @@ describe('runner', function describeRunner() {
       .to.have.been.calledWithMatch('make pre-push', {stdio: 'inherit'})
   })
 
+  it('executes multiple commands specified on the ghooks config', () => {
+    setupPackageJsonWith({config: {
+      ghooks: {
+        'pre-commit': ['echo pre-commit one', 'echo pre-commit two'],
+        'pre-push': ['echo pre-push one', 'echo pre-push two'],
+      },
+    }})()
+    this.run(process.cwd(), '/pre-commit')
+    expect(this.spawn)
+      .to.have.been.calledWithMatch('echo pre-commit one', {stdio: 'inherit'})
+      .and.to.have.been.calledWithMatch('echo pre-commit two', {stdio: 'inherit'})
+
+    this.run(process.cwd(), '/pre-push')
+    expect(this.spawn)
+      .to.have.been.calledWithMatch('echo pre-push one', {stdio: 'inherit'})
+      .and.to.have.been.calledWithMatch('echo pre-push two', {stdio: 'inherit'})
+  })
+
   it('exits as the hook commands exits', () => {
     this.run(process.cwd(), '/pre-commit')
     expect(this.spawnOn).to

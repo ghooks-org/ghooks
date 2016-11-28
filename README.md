@@ -46,6 +46,18 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
 }
 ```
 
+Multiple commands per git hook are possible using arrays:
+
+```json
+{
+  "pre-commit": [ "check-something", "gulp lint" ],
+  …
+}
+
+```
+
+The commands are then executed in the order they're defined in `package.json`.
+
 **Note:** _The hooks' working directory is relative to the git root (where you have your `.git` directory). This means that if your package.json is in a subdirectory of your git repo, you'll need to cd into the directory before running any npm scripts. E.g.:_
 
 ```json
