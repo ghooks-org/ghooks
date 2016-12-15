@@ -1,3 +1,5 @@
+## note: this project is deprecated in favor of [husky](https://github.com/typicode/husky) ( read more [#166](https://github.com/gtramontina/ghooks/issues/166) )
+
 # ghooks
 
 [![version](https://img.shields.io/npm/v/ghooks.svg?style=flat-square)](http://npm.im/ghooks)
