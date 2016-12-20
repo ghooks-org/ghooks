@@ -17,7 +17,7 @@ Read more: [#166](https://github.com/gtramontina/ghooks/issues/166).
 [![downloads](https://img.shields.io/npm/dm/ghooks.svg?style=flat-square)](http://npm-stat.com/charts.html?package=ghooks&from=2014-04-01)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
-[![gitter chat](https://img.shields.io/gitter/room/gtramontina/ghooks.svg?style=flat-square)](https://gitter.im/gtramontina/ghooks)
+[![deprecated](http://badges.github.io/stability-badges/dist/deprecated.svg)](http://github.com/badges/stability-badges)
 
 Simple git hooks
 
