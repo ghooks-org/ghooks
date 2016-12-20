@@ -2,6 +2,8 @@
   "extends": "kentcdodds",
   "rules": {
     "complexity": [2, 2],
-    "max-statements": [2, 5]
+    "max-statements": [2, 5],
+    "babel/no-invalid-this": 0,
+    "global-require": 0
   }
 }

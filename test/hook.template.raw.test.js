@@ -51,7 +51,7 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
           statSync: () => {
             return {isFile: () => true}
           },
-          readFileSync: () => '[core]\n\tworktree = ' + worktree,
+          readFileSync: () => `[core]\n\tworktree = ${worktree}`,
         },
       }
       stub[ghooksResolved] = this.ghooks = sinon.stub()

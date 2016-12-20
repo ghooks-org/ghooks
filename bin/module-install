@@ -1,11 +1,12 @@
 #!/usr/bin/env node
+/* eslint-disable */
 try {
   const opt = require('opt-cli')
   if (!opt.testOptOut('ghooks-install')) {
     require('./install')
   }
 } catch (e) {
-  console.warn( // eslint-disable-line no-console
+  console.warn(
     '\nghooks postinstall could not be completed.\n' +
     '==========================================\n\n' +
     'Usually this is due to using npm@2.15.x. Please consider updating npm\n' +
