@@ -1,4 +1,8 @@
-## note: this project is deprecated in favor of [husky](https://github.com/typicode/husky) ( read more [#166](https://github.com/gtramontina/ghooks/issues/166) )
+# DEPRECATED
+
+This module is now deprecated in favor [`husky`](https://github.com/typicode/husky) and therefore no longer maintained. Thank you all for contributing and using `ghooks`!
+
+Read more: [#166](https://github.com/gtramontina/ghooks/issues/166).
 
 # ghooks
 
