@@ -1,11 +1,17 @@
 {
-  "extends": "kentcdodds/test",
+  "env": {
+    "node": true,
+    "mocha": true
+  },
   "rules": {
-    "no-invalid-this": 0
+    "no-invalid-this": 0,
+    "max-statements": 0
   },
   "globals": {
     "proxyquire": false,
     "fsStub": false,
-    "path": false
+    "path": false,
+    "expect": false,
+    "sinon": false
   }
 }

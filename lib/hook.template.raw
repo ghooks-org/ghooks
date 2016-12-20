@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // {{generated_message}}
-
+/* eslint-disable import/no-dynamic-require,import/no-unassigned-import */
 const fs = require('fs')
 const path = require('path')
+
 const nodeModulesPath = '{{node_modules_path}}'
 const ghooks = getGhooksEntryPoint()
 
@@ -55,7 +56,7 @@ function getConfigFileContent() {
 }
 
 function getWorkTreeFromConfig(configFileContent) {
-  const worktreeRegEx = /\[core\][^]{0,}worktree = ([^\n]{1,})[^]{0,}/
+  const worktreeRegEx = /\[core][^]{0,}worktree = ([^\n]{1,})[^]{0,}/
   return worktreeRegEx.test(configFileContent) ? configFileContent.replace(worktreeRegEx, '$1') : ''
 }
 
@@ -63,6 +64,6 @@ function warnAboutGHooks() {
   console.warn( // eslint-disable-line no-console
     'ghooks not found!\n' +
     'Make sure you have it installed on your "node_modules".\n' +
-    'Skipping git hooks.'
+    'Skipping git hooks.',
   )
 }
