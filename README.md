@@ -1,8 +1,8 @@
 # DEPRECATED
 
-This module is now deprecated in favor [`husky`](https://github.com/typicode/husky) and therefore no longer maintained. Thank you all for contributing and using `ghooks`!
+This module is now deprecated in favor [`husky`](https://github.com/typicode/husky) and therefore no longer maintained. Thank you all for contributing and using `ghooks`! Read more: [#166](https://github.com/gtramontina/ghooks/issues/166).
 
-Read more: [#166](https://github.com/gtramontina/ghooks/issues/166).
+Feel free to reach out if you want to keep maintaining this project.
 
 # ghooks
 
