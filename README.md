@@ -6,7 +6,16 @@ Feel free to reach out if you want to keep maintaining this project.
 
 ## Migrating to Husky
 
-To migrate from `ghooks` to `husky`, delete all of your git hooks first by deleting the `.git/hooks` directory (if you have any custom hooks, you should preserve those by deleting all other hooks individually). Then uninstall `ghooks` and install `husky`. Please refer to [this commit](https://github.com/nhsuk/connecting-to-services/commit/06e0d619de1fe7e90c287bcb95a5a7f20710a3ea) as an example.
+To migrate from `ghooks` to `husky`, uninstall `ghooks` and install `husky`:
+
+```sh
+npm uninstall ghooks --save-dev
+npm install husky --save-dev
+```
+
+`ghooks` scripts will be automatically migrated and custom hooks will be preserved.
+
+Please refer to [this commit](https://github.com/nhsuk/connecting-to-services/commit/06e0d619de1fe7e90c287bcb95a5a7f20710a3ea) as an example.
 
 # ghooks
 
