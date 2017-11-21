@@ -9,6 +9,11 @@ branches:
 notifications:
   email: false
 node_js:
+  - 'lts/*'
+  - '9'
+  - '8'
+  - '7'
+  - '6'
   - '5'
   - '4'
 before_install:
