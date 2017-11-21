@@ -4,7 +4,6 @@ coverage
 .idea
 .opt-in
 .opt-out
-lib
 test
 .editorconfig
 .eslintrc

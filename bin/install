@@ -1,23 +1,2 @@
 #!/usr/bin/env node
-const exists = require('path-exists')
-const exec = require('execa')
-
-function isBuilt() {
-  return exists('./dist')
-}
-
-function build() {
-  return exec('npm', ['run', 'build'])
-}
-
-function install() {
-  require('../dist/install')()
-}
-
-isBuilt().then(function built(yes) {
-  if (yes) {
-    install()
-  } else {
-    build().then(install)
-  }
-})
+require('../lib/install')()
