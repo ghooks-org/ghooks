@@ -1,22 +1,3 @@
-# DEPRECATED
-
-This module is now deprecated in favor [`husky`](https://github.com/typicode/husky) and therefore no longer maintained. Thank you all for contributing and using `ghooks`! Read more: [#166](https://github.com/gtramontina/ghooks/issues/166).
-
-Feel free to reach out if you want to keep maintaining this project.
-
-## Migrating to Husky
-
-To migrate from `ghooks` to `husky`, uninstall `ghooks` and install `husky`:
-
-```sh
-npm uninstall ghooks --save-dev
-npm install husky --save-dev
-```
-
-`ghooks` scripts will be automatically migrated and custom hooks will be preserved.
-
-Please refer to [this commit](https://github.com/nhsuk/connecting-to-services/commit/06e0d619de1fe7e90c287bcb95a5a7f20710a3ea) as an example.
-
 # ghooks
 
 [![version](https://img.shields.io/npm/v/ghooks.svg?style=flat-square)](http://npm.im/ghooks)
@@ -30,7 +11,6 @@ Please refer to [this commit](https://github.com/nhsuk/connecting-to-services/co
 [![downloads](https://img.shields.io/npm/dm/ghooks.svg?style=flat-square)](http://npm-stat.com/charts.html?package=ghooks&from=2014-04-01)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
-[![deprecated](http://badges.github.io/stability-badges/dist/deprecated.svg)](http://github.com/badges/stability-badges)
 
 Simple git hooks
 
