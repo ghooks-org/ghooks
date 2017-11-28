@@ -1,6 +1,7 @@
 {
   "extends": "kentcdodds",
   "rules": {
+    "comma-dangle": 0,
     "complexity": [2, 2],
     "max-statements": [2, 5],
     "babel/no-invalid-this": 0,
