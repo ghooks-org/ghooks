@@ -1,3 +1,4 @@
+const path = require('path')
 require('./setup')()
 
 describe('hook.template.raw', function describeHookTemplateRaw() {
@@ -11,7 +12,28 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
 
     it('delegates the hook execution to ghooks', () => {
       const filename = path.resolve(process.cwd(), 'lib', 'hook.template.raw')
-      expect(this.ghooks).to.have.been.calledWith('{{node_modules_path}}', filename)
+      const calledWith = path.resolve(__dirname, '../', '../', 'node_modules')
+      expect(this.ghooks).to.have.been.calledWith(calledWith, filename)
+    })
+
+    it('works when node modules cannot be found', () => {
+      const ghooks = sinon.stub()
+      let throwException = true
+      proxyquire('../lib/hook.template.raw', {
+        ghooks,
+        path: {
+          resolve: () => {
+            if (throwException) {
+              throwException = false
+              throw new Error('path missing')
+            }
+            return '{{node_modules_path}}'
+          },
+        },
+      })
+
+      const filename = path.resolve(process.cwd(), 'lib', 'hook.template.raw')
+      expect(ghooks).to.have.been.calledWith('{{node_modules_path}}', filename)
     })
 
   })
@@ -28,14 +50,15 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
   describe('when ghooks is installed, but the node working dir is below the project dir', () => {
 
     beforeEach(() => {
-      const ghooksEntryPoint = path.resolve(__dirname, '..', '{{node_modules_path}}', 'ghooks')
+      const ghooksEntryPoint = path.resolve(__dirname, '../', '../', 'node_modules', 'ghooks')
       this.ghooks = sinon.stub()
       proxyquire('../lib/hook.template.raw', {ghooks: null, [ghooksEntryPoint]: this.ghooks})
     })
 
     it('delegates the hook execution to ghooks', () => {
       const filename = path.resolve(process.cwd(), 'lib', 'hook.template.raw')
-      expect(this.ghooks).to.have.been.calledWith('{{node_modules_path}}', filename)
+      const calledWith = path.resolve(__dirname, '../', '../', 'node_modules')
+      expect(this.ghooks).to.have.been.calledWith(calledWith, filename)
     })
 
   })
@@ -60,7 +83,8 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
 
     it('delegates the hook execution to ghooks', () => {
       const filename = path.resolve(process.cwd(), 'lib', 'hook.template.raw')
-      expect(this.ghooks).to.have.been.calledWith('{{node_modules_path}}', filename)
+      const calledWith = path.resolve(__dirname, '../', '../', 'node_modules')
+      expect(this.ghooks).to.have.been.calledWith(calledWith, filename)
     })
 
   })
