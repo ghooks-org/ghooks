@@ -18,13 +18,13 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
 
     it('works when node modules cannot be found', () => {
       const ghooks = sinon.stub()
-      let throwException = true
+      this.throwException = true
       proxyquire('../lib/hook.template.raw', {
         ghooks,
         path: {
           resolve: () => {
-            if (throwException) {
-              throwException = false
+            if (this.throwException) {
+              this.throwException = false
               throw new Error('path missing')
             }
             return '{{node_modules_path}}'
