@@ -5,3 +5,4 @@ coverage
 .idea
 .opt-in
 .opt-out
+package-lock.json
