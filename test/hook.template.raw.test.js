@@ -7,7 +7,15 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
 
     beforeEach(() => {
       this.ghooks = sinon.stub()
-      proxyquire('../lib/hook.template.raw', {ghooks: this.ghooks})
+      const stub = {
+        ghooks: this.ghooks,
+        fs: {
+          statSync: () => {
+            return {isFile: () => true}
+          },
+        },
+      }
+      proxyquire('../lib/hook.template.raw', stub)
     })
 
     it('delegates the hook execution to ghooks', () => {
@@ -21,13 +29,21 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
       this.throwException = true
       proxyquire('../lib/hook.template.raw', {
         ghooks,
-        path: {
-          resolve: () => {
+        fs: {
+          statSync: () => {
             if (this.throwException) {
               this.throwException = false
               throw new Error('path missing')
             }
-            return '{{node_modules_path}}'
+          }
+        },
+        path: {
+          resolve: () => {
+            if (!this.throwException) {
+              return '{{node_modules_path}}'
+            }
+
+            return ''
           },
         },
       })
@@ -51,8 +67,18 @@ describe('hook.template.raw', function describeHookTemplateRaw() {
 
     beforeEach(() => {
       const ghooksEntryPoint = path.resolve(__dirname, '../', '../', 'node_modules', 'ghooks')
+
       this.ghooks = sinon.stub()
-      proxyquire('../lib/hook.template.raw', {ghooks: null, [ghooksEntryPoint]: this.ghooks})
+      const stub = {
+        ghooks: null,
+        [ghooksEntryPoint]: this.ghooks,
+        fs: {
+          statSync: () => {
+            return {isFile: () => true}
+          },
+        },
+      }
+      proxyquire('../lib/hook.template.raw', stub)
     })
 
     it('delegates the hook execution to ghooks', () => {

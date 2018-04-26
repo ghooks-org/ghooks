@@ -21,11 +21,15 @@ function getGhooksEntryPoint() {
 }
 
 function getNodeModulesAbsoluteEntryPoint() {
+  const _nodeModulesPath = path.resolve(__dirname, '../', '../', 'node_modules')
+
   try {
-    return path.resolve(__dirname, '../', '../', 'node_modules')
+    fs.statSync(_nodeModulesPath)
   } catch (e) {
     return '{{node_modules_path}}'
   }
+
+  return _nodeModulesPath
 }
 
 function getGhooksAbsoluteEntryPoint() {
