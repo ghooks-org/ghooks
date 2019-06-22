@@ -19,7 +19,7 @@
     "url": "https://github.com/gtramontina/ghooks/issues"
   },
   "scripts": {
-    "lint": "eslint bin/* lib/* test/",
+    "lint": "if-node-version \">=6\" eslint bin/* lib/* test/",
     "test:unit": "mocha",
     "test": "npm run lint && npm run coverage",
     "coverage": "nyc --reporter=lcov --reporter=text mocha",
@@ -51,6 +51,7 @@
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-mocha": "4.7.0",
     "ghooks": "*",
+    "if-node-version": "1.1.1",
     "mocha": "3.2.0",
     "mock-fs": "4.4.2",
     "nyc": "10.0.0",
