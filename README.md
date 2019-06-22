@@ -16,7 +16,7 @@ Simple git hooks
 
 ## Installation
 
-```
+```shell
 npm install ghooks --save-dev
 ```
 
@@ -28,7 +28,7 @@ _Please also note, that it is absolutely **not advised** to install `ghooks` glo
 
 Add a `config.ghooks` entry in your `package.json` and simply specify which git hooks you want and their corresponding commands, like the following:
 
-```
+```json
 {
   …
   "config": {
@@ -45,7 +45,7 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
 }
 ```
 
-**Note:** _The hooks' working directory is relative to the git root (where you have your `.git` directory). This means that if your package.json is in a subdirectory of your git repo, you'll need to cd into the directory before running any npm scripts. E.g.:_
+**Note:** _The hooks' working directory is relative to the git root (where you have your `.git` directory). This means that if your package.json is in a subdirectory of your git repository, you'll need to cd into the directory before running any npm scripts. E.g.:_
 
 ```json
 "pre-commit": "cd path/to/folder && npm run test"
@@ -55,7 +55,7 @@ Add a `config.ghooks` entry in your `package.json` and simply specify which git 
 
 One of the last things you want is to raise the barrier to contributing to your open source project. So [Andreas Windt](https://github.com/ta2edchimp) developed the [opt-cli](https://npmjs.com/package/opt-cli) package to allow you to turn your hooks into opt-in/out scripts. See this project's [`package.json`](package.json) for an example of how to do that.
 
-## All [documented](http://git-scm.com/docs/githooks) hooks are available:
+## All [documented](http://git-scm.com/docs/githooks) hooks are available
 
 * applypatch-msg
 * pre-applypatch
@@ -80,6 +80,7 @@ One of the last things you want is to raise the barrier to contributing to your 
 * [Usage with git GUI clients](https://github.com/ghooks-org/ghooks/issues/18) – Thanks to [@JamieMason](https://github.com/JamieMason)
 
 ## Credits
+
 This module is heavily inspired by [__@nlf__](https://github.com/nlf)'s [precommit-hook](https://www.npmjs.org/package/precommit-hook)
 
 ## Contributors
