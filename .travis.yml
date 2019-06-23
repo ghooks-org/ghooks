@@ -10,6 +10,9 @@ notifications:
   email: false
 node_js:
   - 'lts/*'
+  - '12'
+  - '11'
+  - '10'
   - '9'
   - '8'
   - '7'
