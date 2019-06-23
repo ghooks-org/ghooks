@@ -16,6 +16,7 @@ branches:
 
 install:
   - ps: Install-Product node $env:nodejs_version
+  - IF %nodejs_version% LEQ 5 npm -g install npm@3
   - npm install
 
 test_script:
