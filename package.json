@@ -58,7 +58,7 @@
     "proxyquire": "2.1.0",
     "semantic-release": "6.3.2",
     "sinon": "1.17.7",
-    "sinon-chai": "2.8.0",
+    "sinon-chai": "2.14.0",
     "travis-after-all": "1.4.4",
     "validate-commit-msg": "2.8.2"
   },
