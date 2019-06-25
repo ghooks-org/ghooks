@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "babel-eslint": "8.0.2",
-    "chai": "3.5.0",
+    "chai": "4.2.0",
     "chai-string": "1.4.0",
     "codecov": "3.5.0",
     "commitizen": "2.9.2",
