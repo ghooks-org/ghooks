@@ -4,6 +4,7 @@ chai.use(require('chai-string'))
 
 global.expect = chai.expect
 global.sinon = require('sinon')
+global.sinon.test = require('sinon-test')(global.sinon)
 global.fsStub = require('mock-fs')
 global.proxyquire = require('proxyquire').noCallThru()
 global.path = require('path')
