@@ -39,7 +39,7 @@
     "spawn-command": "0.0.2"
   },
   "devDependencies": {
-    "babel-eslint": "8.0.2",
+    "babel-eslint": "9.0.0",
     "chai": "4.2.0",
     "chai-string": "1.4.0",
     "codecov": "3.5.0",
