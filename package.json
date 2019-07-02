@@ -43,7 +43,7 @@
     "chai": "4.2.0",
     "chai-string": "1.4.0",
     "codecov": "3.5.0",
-    "commitizen": "2.9.2",
+    "commitizen": "3.1.1",
     "cz-conventional-changelog": "1.2.0",
     "eslint": "3.19.0",
     "eslint-config-kentcdodds": "11.1.0",
