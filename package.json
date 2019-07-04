@@ -54,7 +54,7 @@
     "if-node-version": "1.1.1",
     "mocha": "3.2.0",
     "mock-fs": "4.10.1",
-    "nyc": "10.0.0",
+    "nyc": "14.1.1",
     "proxyquire": "2.1.0",
     "semantic-release": "6.3.2",
     "sinon": "7.3.2",
