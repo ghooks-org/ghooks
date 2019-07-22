@@ -44,7 +44,7 @@
     "chai-string": "1.5.0",
     "codecov": "3.5.0",
     "commitizen": "3.1.1",
-    "cz-conventional-changelog": "2.1.0",
+    "cz-conventional-changelog": "3.0.2",
     "eslint": "3.19.0",
     "eslint-config-kentcdodds": "11.1.0",
     "eslint-plugin-babel": "4.1.2",
