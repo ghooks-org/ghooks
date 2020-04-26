@@ -61,6 +61,7 @@ One of the last things you want is to raise the barrier to contributing to your 
 * pre-applypatch
 * post-applypatch
 * pre-commit
+* pre-merge-commit
 * prepare-commit-msg
 * commit-msg
 * post-commit
@@ -72,8 +73,13 @@ One of the last things you want is to raise the barrier to contributing to your 
 * update
 * post-receive
 * post-update
+* push-to-checkout
 * pre-auto-gc
 * post-rewrite
+* sendemail-validate
+* fsmonitor-watchman
+* p4-pre-submit
+* post-index-change
 
 ## Common Issues
 

@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "findup": "0.1.5",
+    "git-hooks-list": "2.0.0",
     "lodash.clone": "4.5.0",
     "manage-path": "2.0.0",
     "opt-cli": "1.6.0",
