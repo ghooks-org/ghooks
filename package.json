@@ -48,7 +48,7 @@
     "eslint": "3.19.0",
     "eslint-config-kentcdodds": "11.1.0",
     "eslint-plugin-babel": "4.1.2",
-    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-import": "2.21.1",
     "eslint-plugin-mocha": "4.12.1",
     "ghooks": "*",
     "if-node-version": "1.1.1",
