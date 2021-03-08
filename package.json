@@ -52,7 +52,7 @@
     "eslint-plugin-mocha": "4.12.1",
     "ghooks": "*",
     "if-node-version": "1.1.1",
-    "mocha": "3.2.0",
+    "mocha": "8.3.1",
     "mock-fs": "4.10.1",
     "nyc": "10.0.0",
     "proxyquire": "2.1.0",
