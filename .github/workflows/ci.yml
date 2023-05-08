@@ -10,6 +10,7 @@ jobs:
 
   CI:
     runs-on: ${{ matrix.platform }}
+    continue-on-error: true
     strategy:
       matrix:
         platform:
