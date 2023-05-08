@@ -41,6 +41,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: '🛠️ Install'
+        run: npm install
+
       - name: '🧪 Test'
         run: npm run test
 
