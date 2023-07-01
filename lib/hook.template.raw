@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env {{node_bin}}
 // {{generated_message}}
 /* eslint-disable import/no-dynamic-require,import/no-unassigned-import */
 const fs = require('fs')
